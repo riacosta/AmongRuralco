@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <style>
+        body {
+          background-color:black;
+          color:white;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        #main{
+            margin: auto;
+            width: 500px;
+        }
+        #mainTitle{
+            background: url('anceu-coliving.png') center center no-repeat;
+      
+            width: 500px;
+            height: 400px;
+        }
+        
+        h1 {
+        color: red;
+          margin: 20px 0px 0px 0px;
+          font-size: 20;
+        
+        }
+        p{
+            margin: 5px 0px 0px 0px;
+        }
+        .taskElement{
+            margin-left: 40px;
+        }
+        </style>
+</head>
+
+<body>
+<div id="main">
+    <div id="mainTitle"></div>
+    <div id="Content"></div>
+</div>
+
+</body>
+<data class="json-data" value='
+[
+{
+    "title":"Outside",
+    "body":"Play table tennis and hit the ball 10 times in a row"
+},
+{
+    "title":"Chill house",
+    "body":"Roll a double number with the 2 dice"
+},
+{
+    "title":"Laundry",
+    "body":"Knock on the cajón 20 times"
+},
+{
+    "title":"Laundry",
+    "body":"Hang the clothes that are in the basket"
+},
+{
+    "title":"Outside",
+    "body":"Lie down on the hammock and swing for 1 minute"
+},
+{
+    "title":"Chicken’s door",
+    "body":"Recite the spell on the door"
+},
+{
+    "title":"Silent coworking",
+    "body":"Play 20 times the tambourine"
+},
+{
+    "title":"Silent coworking",
+    "body":"Separate the UNO cards by colour"
+},
+{
+    "title":"Call room",
+    "body":"Recite the lyrics of the song"
+},
+{
+    "title":"Kitchen",
+    "body":"Count the bottle caps in the box one by one"
+},
+{
+    "title":"Kitchen",
+    "body":"Change oven trays to the other oven"
+},
+{
+    "title":"Cafe",
+    "body":"Score 3 paper balls into the trash can"
+},
+{
+    "title":"Living room",
+    "body":"Move all the stuff on the top drawer to the bottom one (or viceversa)"
+},
+{
+    "title":"Living room",
+    "body":"Pick a table and sit on every chair, one by one"
+},
+{
+    "title":"Living room",
+    "body":"On the fireplace couch, arrange the pillows by color (or dearrange them)"
+},
+{
+    "title":"Rosa’s room",
+    "body":"Write your full name on the DYMO machine"
+},
+{
+    "title":"Orchard",
+    "body":"Turn the lights on and off 20 times"
+}
+]
+'></data>
+<script type="text/javascript">
+    const jsonData = document.querySelector('.json-data');
+    const tasks = JSON.parse(jsonData.value);
+    const shuffledTasks = tasks.sort(() => 0.5 - Math.random());
+    let selectedTasks = shuffledTasks.slice(0, 5);
+    selectedTasks.forEach(task => {
+        var taskElement = document.createElement("div");
+        taskElement.setAttribute("class", "taskElement");
+        var tag = document.createElement("h1");
+        var text = document.createTextNode(task.title);
+        tag.appendChild(text);
+        var body = document.createElement("p");
+        var text2 = document.createTextNode(task.body);
+        body.appendChild(text2);
+        taskElement.appendChild(tag);
+        taskElement.appendChild(body);
+   
+   
+        var element = document.getElementById("Content");
+        element.appendChild(taskElement);
+    });
+</script>
+</html>
