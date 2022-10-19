@@ -2,42 +2,51 @@
 
 <head>
     <style>
-        body {
-          background-color:black;
-          color:white;
-          font-family: Arial, Helvetica, sans-serif;
+        @viewport {
+            width: device-width;
+            zoom: 1.0;
         }
-        #main{
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #main {
             margin: auto;
             width: 500px;
         }
-        #mainTitle{
+
+        #mainTitle {
             background: url('anceu-coliving.png') center center no-repeat;
-      
+
             width: 500px;
             height: 400px;
         }
-        
+
         h1 {
-        color: red;
-          margin: 20px 0px 0px 0px;
-          font-size: 20;
-        
+            color: red;
+            margin: 20px 0px 0px 0px;
+            font-size: 20;
+
         }
-        p{
+
+        p {
             margin: 5px 0px 0px 0px;
         }
-        .taskElement{
+
+        .taskElement {
             margin-left: 40px;
         }
-        </style>
+    </style>
 </head>
 
 <body>
-<div id="main">
-    <div id="mainTitle"></div>
-    <div id="Content"></div>
-</div>
+    <div id="main">
+        <div id="mainTitle"></div>
+        <div id="Content"></div>
+    </div>
 
 </body>
 <data class="json-data" value='
@@ -128,10 +137,11 @@
         body.appendChild(text2);
         taskElement.appendChild(tag);
         taskElement.appendChild(body);
-   
-   
+
+
         var element = document.getElementById("Content");
         element.appendChild(taskElement);
     });
 </script>
+
 </html>
